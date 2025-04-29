@@ -10,11 +10,12 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class Employee {
-    private Integer id;
+    private int id;
     private String name;
     private String email;
     private String password;
     private String department;
     private String created_at;
     private String updated_at;
+
 }
