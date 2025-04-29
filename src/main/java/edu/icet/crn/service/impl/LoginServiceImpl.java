@@ -1,7 +1,7 @@
 package edu.icet.crn.service.impl;
 
-import edu.icet.crn.dto.User;
-import edu.icet.crn.entity.UserEntity;
+import edu.icet.crn.dto.Employee;
+import edu.icet.crn.entity.EmployeeEntity;
 import edu.icet.crn.repository.LoginRepository;
 import edu.icet.crn.service.LoginService;
 import lombok.RequiredArgsConstructor;
@@ -20,15 +20,15 @@ public class LoginServiceImpl implements LoginService {
     final ModelMapper modelMapper;
 
     @Override
-    public void signUp(User user) {
-        loginRepository.save(modelMapper.map(user, UserEntity.class));
+    public void signUp(Employee employee) {
+        loginRepository.save(modelMapper.map(employee, EmployeeEntity.class));
     }
 
     @Override
     public boolean logIn(String email, String password) {
-        List<UserEntity> byEmail = loginRepository.findByEmail(email);
-        for (UserEntity user : byEmail) {
-            if (user.getPassword().equals(password)) {
+        List<EmployeeEntity> byEmail = loginRepository.findByEmail(email);
+        for (EmployeeEntity employee : byEmail) {
+            if (employee.getPassword().equals(password)) {
                 return true;
             }
         }
