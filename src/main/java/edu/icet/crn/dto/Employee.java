@@ -14,4 +14,7 @@ public class User {
     private String name;
     private String email;
     private String password;
+    private String department;
+    private String created_at;
+    private String updated_at;
 }

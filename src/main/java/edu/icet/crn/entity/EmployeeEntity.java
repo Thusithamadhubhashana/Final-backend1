@@ -11,7 +11,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Entity
-@Table(name = "user")
+@Table(name = "employee")
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,4 +19,7 @@ public class UserEntity {
     private String name;
     private String email;
     private String password;
+    private String department;
+    private String created_at;
+    private String updated_at;
 }
